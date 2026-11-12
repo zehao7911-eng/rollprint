@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#aaf3ee">
+<meta name="description" content="Roll a tiny print robot and stamp all the matching tiles. A one-thumb 3D puzzle.">
+<title>Rollprint</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game" aria-label="Rollprint">
+  <canvas id="scene" aria-label="Print deck. Swipe or use the arrow keys to roll the robot."></canvas>
+  <header class="hud">
+    <div><h1>ROLL<span>PRINT</span></h1><p id="job"></p></div>
+    <div class="hud-actions">
+      <button class="tool" id="undo" aria-label="Undo last roll" title="Undo"></button>
+      <button class="tool" id="sound" aria-label="Mute sound" title="Sound"></button>
+    </div>
+  </header>
+  <div class="strip">
+    <span id="marks" aria-label="Print targets"></span>
+    <span id="moves">0 MOVES</span>
+  </div>
+  <div id="toast" class="toast" aria-live="polite" hidden></div>
+  <p id="hint" class="hint">Swipe to roll onto a matching mark.</p>
+  <section id="panel" class="panel" aria-labelledby="panel-title">
+    <h2 id="panel-title">Ready to roll?</h2>
+    <p id="panel-copy">Roll the robot onto matching print tiles.</p>
+    <button id="primary" class="primary">Play</button>
+    <p id="rewards" class="rewards" hidden></p>
+  </section>
+  <div id="cinema" class="cinema" hidden>
+    <div class="bar"></div><div class="bar"></div>
+    <p id="scene-caption"></p>
+    <button id="skip" class="tool skip">Skip</button>
+  </div>
+</main>
+<script src="vendor/three.min.js"></script>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>
